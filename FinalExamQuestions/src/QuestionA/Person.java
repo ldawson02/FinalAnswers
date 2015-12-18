@@ -6,7 +6,7 @@ import java.util.Date;
 /*
  * comment
  */
-public abstract class Person {
+public abstract class Person implements iPersonRead, iPersonReadWrite {
 
 	private Date DOB;
 	private String FirstName;
@@ -16,58 +16,114 @@ public abstract class Person {
 	private String phone_number;
 	private String email_address;
 
+	/* (non-Javadoc)
+	 * @see QuestionA.iPersonRead#getFirstName()
+	 */
+	@Override
 	public String getFirstName() {
 		return FirstName;
 	}
 
+	/* (non-Javadoc)
+	 * @see QuestionA.iPersonReadWrite#setFirstName(java.lang.String)
+	 */
+	@Override
 	public void setFirstName(String FirstName) {
 		this.FirstName = FirstName;
 	}
 
+	/* (non-Javadoc)
+	 * @see QuestionA.iPersonRead#getMiddleName()
+	 */
+	@Override
 	public String getMiddleName() {
 		return MiddleName;
 	}
 
+	/* (non-Javadoc)
+	 * @see QuestionA.iPersonReadWrite#setMiddleName(java.lang.String)
+	 */
+	@Override
 	public void setMiddleName(String MiddleName) {
 		this.MiddleName = MiddleName;
 	}
 
+	/* (non-Javadoc)
+	 * @see QuestionA.iPersonRead#getLastName()
+	 */
+	@Override
 	public String getLastName() {
 		return LastName;
 	}
 
+	/* (non-Javadoc)
+	 * @see QuestionA.iPersonReadWrite#setLastName(java.lang.String)
+	 */
+	@Override
 	public void setLastName(String LastName) {
 		this.LastName = LastName;
 	}
 
+	/* (non-Javadoc)
+	 * @see QuestionA.iPersonRead#getDOB()
+	 */
+	@Override
 	public Date getDOB() {
 		return DOB;
 	}
 
+	/* (non-Javadoc)
+	 * @see QuestionA.iPersonReadWrite#setDOB(java.util.Date)
+	 */
+	@Override
 	public void setDOB(Date DOB) {
 		this.DOB = DOB;
 	}
 
+	/* (non-Javadoc)
+	 * @see QuestionA.iPersonReadWrite#setAddress(java.lang.String)
+	 */
+	@Override
 	public void setAddress(String newAddress) {
 		address = newAddress;
 	}
 
+	/* (non-Javadoc)
+	 * @see QuestionA.iPersonRead#getAddress()
+	 */
+	@Override
 	public String getAddress() {
 		return address;
 	}
 
+	/* (non-Javadoc)
+	 * @see QuestionA.iPersonReadWrite#setPhone(java.lang.String)
+	 */
+	@Override
 	public void setPhone(String newPhone_number) {
 		phone_number = newPhone_number;
 	}
 
+	/* (non-Javadoc)
+	 * @see QuestionA.iPersonRead#getPhone()
+	 */
+	@Override
 	public String getPhone() {
 		return phone_number;
 	}
 
+	/* (non-Javadoc)
+	 * @see QuestionA.iPersonReadWrite#setEmail(java.lang.String)
+	 */
+	@Override
 	public void setEmail(String newEmail) {
 		email_address = newEmail;
 	}
 
+	/* (non-Javadoc)
+	 * @see QuestionA.iPersonRead#getEmail()
+	 */
+	@Override
 	public String getEmail() {
 		return email_address;
 	}
@@ -95,15 +151,27 @@ public abstract class Person {
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see QuestionA.iPersonRead#PrintName()
+	 */
+	@Override
 	public void PrintName() {
 		System.out.println(this.FirstName + ' ' + this.MiddleName + ' '
 				+ this.LastName);
 	}
 
+	/* (non-Javadoc)
+	 * @see QuestionA.iPersonRead#PrintDOB()
+	 */
+	@Override
 	public void PrintDOB() {
 		System.out.println(this.DOB);
 	}
 
+	/* (non-Javadoc)
+	 * @see QuestionA.iPersonRead#PrintAge()
+	 */
+	@Override
 	public int PrintAge() {
 		Calendar today = Calendar.getInstance();
 		Calendar birthDate = Calendar.getInstance();

@@ -22,7 +22,7 @@ public abstract class Person {
 		return PersonID;
 	}
 
-	private void setPersonID(UUID personID) {
+	private void setPersonID() {
 		PersonID = UUID.randomUUID();
 	}
 

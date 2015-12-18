@@ -26,20 +26,26 @@ public class Rectangle_Test {
 	public void tearDown() throws Exception {
 	}
 
-	@Test
-	public void Rectangle_Test1() {
+	@Test(expected = IllegalRectangle.class)
+	public void Rectangle_Test1() throws IllegalRectangle{
 		
 		Rectangle r2 = new Rectangle(-5, -10);
 		assertTrue(r2.ComputeArea() == 50);
 	}
 	
-	@Test
-	public void Rectangle_Test2() {
+	@Test(expected = IllegalRectangle.class)
+	public void Rectangle_Test2() throws IllegalRectangle{
 		
 	
 		Rectangle r2 = new Rectangle(-5, -10);
 		assertTrue(r2.ComputeArea() == 50);
 	}
 	
-
+	@Test
+	public void Rectangle_Test3() throws IllegalRectangle{
+		
+		
+		Rectangle r2 = new Rectangle(5, 10);
+		assertTrue(r2.ComputeArea() == 50);
+	}
 }
